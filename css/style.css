@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --empty: gray;
+    --bomb: rgba(238, 39, 75, 0.93);
+    --hidden: darkgray;
+}
+
+body {
+    height: 100vh;
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background-color: beige;
+}
+
+a {
+    text-decoration: none;
+    color: maroon;
+}
+
+h1, h3 {
+    margin: 15px auto;
+    font-size: 5vw;
+    text-align: center;
+}
+
+p {
+    font-size: 40px;
+}
+
+.board-sizes {
+    display: flex;
+}
+
+main {
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    justify-items: center;
+}
+
+.board {
+    display: none;
+    width: 300px;
+    height: 300px;
+    background-color: var(--hidden);
+    grid-area: 1 / 1 / 3 / 2;
+    z-index: 0;
+}
+
+.square {
+    border: 1px solid white;
+    background-color: var(--hidden);
+    font-size: 0;
+    max-width: 100%;
+    z-index: 1;
+}
+
+.message {
+    display: none;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    justify-content: center;
+    align-items: center;
+    grid-area: 1 / 1 / 3 / 2;
+    z-index: 2;
+}
+
+.message > p {
+    padding: 40% 10%;
+    width: 100%;
+    height: auto;
+}
+
+button#hidden {
+    background-color: var(--hidden);
+}
+
+button#safe {
+    background-color: var(--empty);
+    cursor: not-allowed;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+button#bomb {
+    background-color: var(--bomb);
+    max-width: 100%;
+    height: auto;
+    font-size: 25px;
+    text-align: center;
+}
+
+button#flag {
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("/images/1.png");
+}
+
+/*game button style*/
+.board-size {
+    background-color: #fff000;
+    border-radius: 12px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 15px;
+    margin: 5px;
+    text-align: center;
+    transition: 200ms;
+    width: 110px;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    font-size: 20px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.board-size:not(:disabled):hover,
+.board-size:not(:disabled):focus {
+    outline: 0;
+    background: #d9d004;
+    box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+    border: 2px solid black;
+}
+
+@media only screen and (min-width: 768px) {
+    .board {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media only screen and (min-width: 429px) {
+    .board {
+        width: 400px;
+        height: 400px;
+    }
+}
