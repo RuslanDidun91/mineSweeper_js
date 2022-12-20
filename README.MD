@@ -2,7 +2,7 @@
 
 # 🚩 mineSweeper 💣
 
-### Try to survive in this funny game via [link 👈](https://ruslandidun.github.io/mineSweeper_JS/)
+### Try to survive in this funny game via [link 👈](https://ruslandidun91.github.io/mineSweeper_js/)
 <div id="description" align="center">
 
 ##### Created and designed by Ruslan Didun
